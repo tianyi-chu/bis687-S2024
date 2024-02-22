@@ -1,0 +1,79 @@
+---
+title: "Exploring the Genomic Landscape of Pancreatic Cancer through Mutational Patterns and Survival Outcome Analysis"
+author: "Tianyi Chu and Xinyue Qie"
+date: "2024-02-21"
+output: pdf_document
+bibliography: references.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+Pancreatic ductal adenocarcinoma (PDAC) is a formidable challenge in oncology, often characterized by low survival rates, late diagnosis at advanced stages, and very limited treatment options. The majority of patients have unresectable, locally advanced, or metastatic disease at the time of diagnosis. Moreover, traditional treatments such as chemotherapy, surgery, and radiation have not been shown to significantly improve survival. With its aggressive nature and tendency to metastasize early, the five-year survival rate for pancreatic cancer remains dismal at around 10% [@oberstein_pancreatic_2013; @integrated_2017; @sarantis_pancreatic_2020].
+
+The etiology of PDAC is multifactorial, with risk factors including smoking, obesity, chronic pancreatitis, and family history of the disease. However, the exact mechanisms driving pancreatic tumorigenesis are not fully understood. Recent genomic studies have shed light on the molecular landscape of pancreatic cancer, revealing a complex interplay of genetic alterations that drive tumor initiation, progression, and metastasis.
+
+Key mutations in genes such as KRAS, TP53, CDKN2A, SMAD4, and those involved in DNA repair pathways have been identified as common drivers of pancreatic cancer [@saiki_genetic_2021]. These mutations disrupt crucial cellular processes, including cell cycle regulation, DNA repair mechanisms, and chromatin remodeling, leading to uncontrolled cell proliferation and tumor growth. Targeted therapies directed against these specific mutations, such as inhibitors of the KRAS pathway, hold promise for improving treatment efficacy and patient survival. Therefore, understanding the genetic mutations driving pancreatic cancer is critical for developing personalized treatment approaches and prognostic stratification for improving patient outcomes, and integrating genomic data with clinical parameters can enhance risk assessment and guide therapeutic decisions, ultimately improving patient care and survival rates.
+
+In this study, we aim to explore the genomic landscape of pancreatic cancer, delineate mutational signatures associated with disease progression, and investigate their implications for patient survival. By elucidating molecular mechanisms and identifying prognostic biomarkers, we hope to contribute to enhancing the diagnosis, treatment, and management of pancreatic cancer.
+
+## Research Strategy
+
+### Significance
+
+In the context of PDAC prognosis, critical mutations in specific genes, notably KRAS, CDKN2A, TP53, and SMAD4, along with the subsequent activation of related signaling pathways, play an essential role in treatment resistance. Among these genes, KRAS stands out for its exceptionally high mutation rate; a cohort study involving whole-exome sequencing of 109 PDAC cases found KRAS mutations in over 90% of the samples. However, it has been established that KRAS mutations alone are insufficient to initiate cancer. The precise mechanisms through which secondary mutations influence PDAC outcomes remain unclear, underscoring the need for further investigation into how these additional genetic alterations impact prognosis.
+
+Past research has demonstrated that mutations in the TP53 gene are present in 50–75% of human pancreatic ductal adenocarcinomas (PDAC), typically following an initial activating mutation in the KRAS gene [@morton_mutant_2010]. Efforts to develop treatments have focused on targeting the mutant P53 protein. By examining the Pancreatic Adenocarcinoma TCGA PanCancer dataset, our objective is to identify additional genes that are prone to secondary mutations, similar to TP53. This approach aims to uncover new avenues for therapeutic intervention.
+
+### Innovation
+
+Prior research has explored the genes frequently mutated in PDAC through both in-vivo and in-vitro studies. In this study, leveraging the TCGA PanCancer dataset, we intend to delineate the genomic landscape of PDAC using a data-driven methodology. Our analysis will particularly concentrate on identifying mutations that occur independently of TP53 mutations, noting that about 30% of secondary mutations remain uncharted in their specific locations.
+
+Furthermore, we plan to conduct exploratory analyses on samples with the identified secondary mutations. Through survival analysis, we aim to assess the impact of these mutations on patient survival, comparing the outcomes of patients with these genetic alterations against those without, and against patients with TP53 mutations. Our findings will elucidate the influence of gene mutations on survival prospects, highlighting how secondary mutations might differentiate survival outcomes in PDAC patients.
+
+Concurrently, we will examine the nature of mutations within these frequently mutated genes. By integrating mutation data from the TCGA dataset with mRNA sequencing data, we will analyze patient samples based on gene expression levels of these mutated genes. This will allow us to classify patients with secondary mutations and examine how different mutations within the same gene affect patient survival. This comprehensive analysis will provide insights into whether specific types of mutations in the same genes influence the survival rates of PDAC patients differently.
+
+### Research Plan
+
+In our project, we will utilize the Pancreatic Adenocarcinoma dataset from The Cancer Genome Atlas (TCGA) PanCancer Atlas project. This dataset provides comprehensive genomic and clinical information on pancreatic adenocarcinoma, a particularly aggressive and challenging cancer type. The TCGA PanCancer data offers a wealth of molecular profiling data, including somatic mutations, gene expression patterns, DNA copy number alterations, and clinical outcomes, collected from a large cohort of pancreatic cancer patients. By leveraging this rich dataset, we aim to gain deeper insights into the molecular mechanisms driving pancreatic adenocarcinoma pathogenesis, identify key genetic drivers associated with disease progression and treatment response, and explore potential biomarkers for prognostication and personalized therapy. In particular, we aim to harness this information to analyze mutations and survival outcomes for patients using their clinical features and bulk RNA sequencing data.
+
+## Specific Aims
+
+### Hypothesis
+
+We would like to divide the PDAC patient data into 4 groups based on their mutation data: (1) patients with no mutations in KRAS, (2) patients with only first-hit mutations in KRAS, (3) patients with both mutations in KRAS and TP53, and (4) patients with mutations in KRAS but not in TP53. 
+
+We believe that PDAC patients with mutations in KRAS but not TP53 (Group 4 patients) are likely to have mutations in other certain genes, which we denote as frequent genes for secondary mutations. We hypothesize that patients having mutations in these frequent genes have less optimal survival when compared to patients in group 1 and 2. We also hypothesize that patients in group 4 have different survival when compared to those in group 3.
+
+Specifically, our hypothesis posits that the presence of specific mutations in key genes is correlated with lower survival outcomes in pancreatic cancer patients. We expect that individuals harboring mutations in these genes will exhibit reduced overall survival rates compared to those without such mutations.
+
+### Rationale
+
+We intend to perform exploratory analyses on PDAC patient samples and identify frequent locations for secondary mutations other than TP53. By employing survival analysis, our goal is to evaluate how these mutations affect patient survival. We will compare the survival rates of patients harboring these genetic alterations with those who do not possess them, as well as with patients who have TP53 mutations. Our research will shed light on the role of gene mutations in influencing survival rates, emphasizing the distinct impact that secondary mutations have on the survival outcomes of PDAC patients.
+
+Our rationale for this hypothesis is grounded in extensive literature documenting the critical roles of KRAS, CDKN2A, TP53, and SMAD4 in pancreatic tumorigenesis and disease progression. These genes are frequently mutated in pancreatic cancer and are known to exert significant influence over crucial cellular processes such as cell cycle regulation, DNA repair mechanisms, and signaling pathways involved in cancer
+development and metastasis.
+
+Studies have demonstrated that mutations in KRAS, for instance, are among the earliest and most common genetic alterations in pancreatic cancer, contributing to tumor initiation and progression. Similarly, alterations in CDKN2A, TP53, and SMAD4 have been implicated in the development of aggressive tumor phenotypes, treatment resistance, and metastatic dissemination.
+
+Given the pivotal roles of these genes in pancreatic cancer pathogenesis, it is plausible to hypothesize that the presence of mutations in KRAS, CDKN2A, TP53, and SMAD4 may confer a survival disadvantage to patients by promoting tumor aggressiveness, treatment resistance, and disease recurrence.
+
+### Experimental Approach
+
+We plan to compare the effect of different mutations on survival outcomes by benchmarking various computational survival methodologies and models. This includes, but is not limited to, the Cox proportional hazard model (CPH) [@katzman_deepsurv:_2018], the random survival forest model (RSF) [@ishwaran_random_2008], and deep learning-based Cox regression models [@katzman_deepsurv:_2018]. Additionally, we will explore models incorporating different regularization methods to potentially explore dimensionality reduction and feature selection techniques. These methods aim to identify features that are related to or contribute significantly to survival outcomes. By employing a diverse range of computational approaches, we seek to comprehensively analyze the impact of mutations on patient survival and uncover novel insights into the prognostic factors associated with pancreatic adenocarcinoma.
+
+### Interpretation of Results
+
+We anticipate that our analysis will reveal a significant association between mutations in KRAS, CDKN2A, TP53, and SMAD4 and reduced survival outcomes in pancreatic cancer patients. The identification of specific genetic markers associated with poor prognosis could inform personalized treatment strategies and facilitate risk stratification for improved patient management.
+
+### Potential Problems and Alternative Approaches
+
+Challenges may arise in the identification and validation of mutations, sample size limitations, and confounding factors affecting survival outcomes. Alternative approaches may involve integrating multi-omics data, employing machine learning algorithms for predictive modeling, and validating findings in independent cohorts to enhance the robustness and generalizability of results.
+
+# References
+
+::: {#refs}
+:::
